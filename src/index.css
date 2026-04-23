@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #0a0a0f;
+    color: #e8e8f0;
+    font-family: 'Inter', sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #12121a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a3d;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7c6fff;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(26, 26, 38, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(42, 42, 61, 0.6);
+  }
+
+  .glass-strong {
+    background: rgba(18, 18, 26, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(124, 111, 255, 0.2);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px rgba(124, 111, 255, 0.5);
+  }
+
+  .input-field {
+    @apply bg-surface border border-border rounded-xl px-4 py-3 font-mono text-sm text-text
+           focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30
+           transition-all duration-200 w-full;
+  }
+
+  .btn-primary {
+    @apply bg-accent hover:bg-accent/80 text-white font-semibold rounded-xl px-6 py-3
+           transition-all duration-200 hover:shadow-glow active:scale-95 cursor-pointer;
+  }
+
+  .btn-secondary {
+    @apply glass border-border hover:border-accent text-muted hover:text-text
+           font-medium rounded-xl px-5 py-2.5 transition-all duration-200 cursor-pointer;
+  }
+
+  .card {
+    @apply glass rounded-2xl p-6;
+  }
+}
